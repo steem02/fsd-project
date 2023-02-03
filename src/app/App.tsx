@@ -1,11 +1,10 @@
-import { Suspense, useState } from "react";
+import { AboutPage } from "pages/AboutPage";
+import { Suspense } from "react";
 import { Link } from "react-router-dom";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { cns } from "shared/lib";
+import { useTheme } from "shared/ThemeProvider";
 import css from "./App.module.scss";
-import { cns } from "./helpers/cns";
-import { AboutPageAsync } from "./pages/AboutPage/AboutPage.async";
-import { MainPageAsync } from "./pages/MainPage/MainPage.async";
-import { useTheme } from "./theme/useTheme";
 
 export interface IAppProps {}
 
@@ -20,8 +19,7 @@ export function App(props: IAppProps) {
 				<Link to="/about">ABOUT</Link>
 				<Suspense fallback={<div>Loading...</div>}>
 					<Routes>
-						<Route path="/" element={<MainPageAsync />} />
-						<Route path="/about" element={<AboutPageAsync />} />
+						<Route path="/about" element={<AboutPage />} />
 					</Routes>
 				</Suspense>
 
