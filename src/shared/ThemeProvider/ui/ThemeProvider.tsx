@@ -1,9 +1,12 @@
 import React, { PropsWithChildren, useState } from "react";
+import { ValueOf } from "shared/types/types";
 
-enum Theme {
-	LIGHT = "light",
-	DARK = "dark",
-}
+const Theme = {
+	LIGHT: "light",
+	DARK: "dark",
+} as const;
+
+type Theme = ValueOf<typeof Theme>;
 
 interface ThemeContextProps {
 	theme: Theme;
@@ -15,7 +18,7 @@ export const ThemeContext = React.createContext<ThemeContextProps>(null);
 const LOCAL_STORAGE_THEME_KEY = "theme";
 
 const getTheme = (theme: Theme | string | null): Theme | null =>
-	Object.values(Theme as any).some((item: Theme) => theme === item) ? (theme as Theme) : null;
+	Object.values(Theme).some((item: Theme) => theme === item) ? (theme as Theme) : null;
 
 const defaultTheme: Theme = getTheme(localStorage.getItem(LOCAL_STORAGE_THEME_KEY)) || Theme.LIGHT;
 
