@@ -11,6 +11,7 @@ export default (env: BuildEnv) => {
 		build: path.resolve(__dirname, "build"),
 		html: path.resolve(__dirname, "public", "index.html"),
 		src: path.resolve(__dirname, "src"),
+		assetModuleFileName: path.join("images", "[name].[contenthash][ext]"),
 	};
 
 	const mode = env.mode || BuildMode.development;

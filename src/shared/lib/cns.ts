@@ -1,5 +1,12 @@
-type Mods = Record<string, string | boolean | null>;
+type Mods = Record<string, string | boolean | null | undefined>;
 
-export default function classNames(className: string, mods: Mods, additional: string[]): string {
-	return [className, ...Object.keys(mods).filter((key) => mods[key]), ...additional].join(" ");
+export default function classNames<T>(className: string, mods?: Mods, additional?: string[]): string {
+	let result = [className];
+	if (mods) {
+		result.push(...Object.keys(mods).filter((key) => mods[key]));
+	}
+	if (additional) {
+		result.push(...additional.filter((item) => Boolean(item)));
+	}
+	return result.join(" ");
 }

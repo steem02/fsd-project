@@ -1,0 +1,22 @@
+.root {
+	height: var(--navbar-height);
+	display: flex;
+	padding: 1rem;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+	background: var(--inverted-bg-color);
+}
+
+.link {
+	font-size: var(--font-size-l);
+	color: var(--primary-color);
+
+	&:first-of-type {
+		margin-right: 1rem;
+	}
+}
+
+.ThemeSwitcher {
+	margin: 0 10px;
+}

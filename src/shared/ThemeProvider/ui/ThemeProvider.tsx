@@ -1,19 +1,17 @@
 import React, { PropsWithChildren, useState } from "react";
 import { ValueOf } from "shared/types/types";
 
-const Theme = {
-	LIGHT: "light",
-	DARK: "dark",
-} as const;
-
-type Theme = ValueOf<typeof Theme>;
+export enum Theme {
+	LIGHT = "light",
+	DARK = "dark",
+}
 
 interface ThemeContextProps {
 	theme: Theme;
 	toggleTheme(): void;
 }
 
-export const ThemeContext = React.createContext<ThemeContextProps>(null);
+export const ThemeContext = React.createContext<ThemeContextProps | null>(null);
 
 const LOCAL_STORAGE_THEME_KEY = "theme";
 

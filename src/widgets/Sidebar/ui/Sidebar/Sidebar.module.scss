@@ -1,0 +1,22 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	width: var(--sidebar-width);
+	padding: 1rem;
+	transition: width 0.3s;
+	background-color: var(--inverted-bg-color);
+	color: var(--primary-color);
+}
+
+.collapsed {
+	padding: 0.5rem;
+	align-items: center;
+	width: var(--sidebar-collapsed-width);
+}
+
+.links {
+	flex-grow: 1;
+}
+
+.actions {
+}

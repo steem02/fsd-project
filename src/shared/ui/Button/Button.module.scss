@@ -1,0 +1,18 @@
+.root {
+	padding: 1rem;
+	border: 1px solid red;
+	border-radius: 1rem;
+	background-color: var(--bg-color);
+	cursor: pointer;
+}
+
+.outlined {
+	background-color: transparent;
+	border: 1px solid var(--bg-color);
+	color: var(--inverted-primary-color);
+}
+
+.contained {
+	background-color: var(--bg-color);
+	color: var(--primary-color);
+}
