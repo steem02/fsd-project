@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import { cns } from "shared/lib";
-import { Theme, useTheme } from "shared/ThemeProvider";
+import { Theme, useTheme } from "app/providers/ThemeProvider";
 import css from "./ThemeSwitcher.module.scss";
 import DarkIcon from "../assets/theme-dark.svg";
 import LightIcon from "../assets/theme-light.svg";

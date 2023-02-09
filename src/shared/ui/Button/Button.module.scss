@@ -2,17 +2,19 @@
 	padding: 1rem;
 	border: 1px solid red;
 	border-radius: 1rem;
+	font-family: var(--font-family-main);
 	background-color: var(--bg-color);
 	cursor: pointer;
 }
 
 .outlined {
-	background-color: transparent;
 	border: 1px solid var(--bg-color);
-	color: var(--inverted-primary-color);
+	background-color: transparent;
+	color: var(--primary-color);
 }
 
 .contained {
+	border: 1px solid var(--inverted-bg-color);
 	background-color: var(--bg-color);
-	color: var(--primary-color);
+	color: var(--inverted-primary-color);
 }
