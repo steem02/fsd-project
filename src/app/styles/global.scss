@@ -1,18 +1,16 @@
 .app {
-	font: var(--font-m);
-
-	background-color: var(--bg-color);
-	color: var(--primary-color);
-
-	min-height: 100vh;
+  min-height: 100vh;
+  font: var(--font-m);
+  color: var(--primary-color);
+  background-color: var(--bg-color);
 }
 
 .page-wrapper {
-	display: flex;
-	height: calc(100vh - var(--navbar-height));
+  display: flex;
+  height: calc(100vh - var(--navbar-height));
 }
 
 .page-content {
-	padding: 1rem;
-	flex-grow: 1;
+  flex-grow: 1;
+  padding: 1rem;
 }

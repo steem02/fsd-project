@@ -1,25 +1,25 @@
 .root {
-	display: flex;
-	flex-direction: column;
-	width: var(--sidebar-width);
-	padding: 1rem;
-	transition: width 0.3s;
-	background-color: var(--secondary-bg-color);
-	color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  padding: 1rem;
+  color: var(--primary-color);
+  background-color: var(--secondary-bg-color);
+  transition: width 0.3s;
 }
 
 .collapsed {
-	padding: 1rem 0.5rem;
-	align-items: center;
-	width: var(--sidebar-collapsed-width);
+  align-items: center;
+  width: var(--sidebar-collapsed-width);
+  padding: 1rem 0.5rem;
 }
 
 .links {
-	flex-grow: 1;
+  flex-grow: 1;
 }
 
 .actions {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

@@ -1,22 +1,22 @@
 .root {
-	height: var(--navbar-height);
-	display: flex;
-	padding: 1rem;
-	justify-content: space-between;
-	align-items: center;
-	gap: 1rem;
-	background: var(--secondary-bg-color);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--navbar-height);
+  padding: 1rem;
+  background: var(--secondary-bg-color);
 }
 
 .link {
-	font-size: var(--font-size-l);
-	color: var(--primary-color);
+  font-size: var(--font-size-l);
+  color: var(--primary-color);
 
-	&:first-of-type {
-		margin-right: 1rem;
-	}
+  &:first-of-type {
+    margin-right: 1rem;
+  }
 }
 
 .ThemeSwitcher {
-	margin: 0 10px;
+  margin: 0 10px;
 }

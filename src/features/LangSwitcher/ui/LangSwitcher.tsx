@@ -1,8 +1,7 @@
-import { PropsWithChildren, useState } from 'react';
+import { PropsWithChildren } from 'react';
 import { Button } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
 import { cns } from 'shared/lib';
-import css from './LangSwitcher.module.scss';
 
 interface LangSwitcherProps {
   className?: string;
@@ -17,7 +16,7 @@ export function LangSwitcher(props: PropsWithChildren<LangSwitcherProps>) {
   };
 
   return (
-    <Button className={cns(css.root, { className }, [])} onClick={changeLanguage}>
+    <Button className={cns('', { className }, [])} onClick={changeLanguage}>
       {t('language')}
     </Button>
   );
