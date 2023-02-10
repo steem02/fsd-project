@@ -20,7 +20,10 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "npm run lint:fix"
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint:fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
