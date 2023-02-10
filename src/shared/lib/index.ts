@@ -1,3 +1,3 @@
-import cns from "./cns";
+import cns from './cns';
 
 export { cns };

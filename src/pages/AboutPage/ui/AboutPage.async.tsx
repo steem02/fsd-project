@@ -1,4 +1,12 @@
-import { lazy } from "react";
+import { lazy } from 'react';
 
-// @ts-ignore
-export const AboutPageAsync = lazy(() => new Promise((resolve) => setTimeout(() => resolve(import("./AboutPage")), 1000)));
+export const AboutPageAsync = lazy(
+  async () =>
+    new Promise((resolve) =>
+      // eslint-disable-next-line no-promise-executor-return
+      setTimeout(() => {
+        // @ts-ignore
+        resolve(import('./AboutPage'));
+      }, 1000)
+    )
+);
