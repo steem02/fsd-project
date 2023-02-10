@@ -9,6 +9,7 @@ import css from "./App.module.scss";
 import { AppRouter } from "./providers/Router/ui";
 import { Navbar } from "widgets/Navbar";
 import { Sidebar } from "widgets/Sidebar";
+import { Button, ButtonVariant } from "shared/ui/Button";
 
 export interface IAppProps {}
 

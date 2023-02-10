@@ -1,10 +1,10 @@
 import { PropsWithChildren, useState } from "react";
 import { cns } from "shared/lib";
 import { Button } from "shared/ui/Button";
-import { ThemeSwitcher } from "widgets/ThemeSwitcher";
+import { ThemeSwitcher } from "features/ThemeSwitcher";
 import css from "./Sidebar.module.scss";
 import { useTranslation } from "react-i18next";
-import { LangSwitcher } from "widgets/LangSwitcher";
+import { LangSwitcher } from "features/LangSwitcher";
 
 interface SideBarProps {
 	classNames?: string;
