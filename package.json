@@ -8,7 +8,9 @@
     "build:prod": "webpack --env mode=production",
     "start": "webpack serve --env port=3000 --env mode=development",
     "lint": "eslint --cache \"**/*.{ts,tsx}\"",
-    "lint:fix": "eslint --cache --fix \"**/*.{ts,tsx}\""
+    "lint:fix": "eslint --cache --fix \"**/*.{ts,tsx}\"",
+    "prepare": "husky install",
+    "test": "lint-staged"
   },
   "author": "",
   "license": "ISC",
@@ -46,7 +48,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
-    "husky": "^8.0.3",
+    "husky": "^8.0.0",
     "lint-staged": "^13.1.1",
     "mini-css-extract-plugin": "^2.5.3",
     "npm": "^9.4.0",
