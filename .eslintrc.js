@@ -46,7 +46,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['node_modules', './build', 'dist', 'public', '.eslintrc.js'],
+  ignorePatterns: ['node_modules', './build', 'dist', 'public', './config/**/*.js', '.eslintrc.js'],
   globals: {
     __DEV__: true,
   },

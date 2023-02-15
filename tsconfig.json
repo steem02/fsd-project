@@ -16,10 +16,11 @@
       "*": ["./src/*"]
     }
   },
-  "ignorePatterns": ["node_modules", "dist", ".eslintrc.js"],
+  "ignorePatterns": ["node_modules", "dist", ".eslintrc.js", "./config/**/*"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   }
+  // "include": ["./jest-setup.ts", "src/**/*", "config/**/*"]
 }
