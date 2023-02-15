@@ -23,8 +23,11 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx, scss}": [
+    "*.{js,jsx,ts,tsx}": [
       "npm run lint:fix"
+    ],
+    "*.{css,scss}": [
+      "npm run lint:scss:fix"
     ]
   },
   "devDependencies": {
