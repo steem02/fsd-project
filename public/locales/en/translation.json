@@ -1,5 +1,8 @@
 {
-	"main": "Main",
-	"about": "About",
-	"language": "English"
+  "main": "Main",
+  "about": "About",
+  "language": "English",
+  "not_found": "Not found page",
+  "page_error": "Page Error",
+  "reload_page": "Reload page"
 }

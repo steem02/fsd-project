@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { ThemeContext } from '../ui/ThemeProvider';
+import { ThemeContext } from './ThemeContext';
 
-function useTheme() {
+export function useTheme() {
   const ctx = useContext(ThemeContext);
 
   if (ctx == null) {
@@ -9,5 +9,3 @@ function useTheme() {
   }
   return ctx;
 }
-
-export default useTheme;

@@ -14,6 +14,6 @@ type AppLinkProps = LinkProps & {
 };
 
 export function AppLink(props: AppLinkProps) {
-  const { className, theme = AppLinkTheme.PRIMARY } = props;
+  const { theme = AppLinkTheme.PRIMARY } = props;
   return <Link className={cns(css.root, {}, [css[theme]])} {...props} />;
 }

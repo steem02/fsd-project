@@ -1,10 +1,10 @@
 import { PropsWithChildren } from 'react';
 import { cns } from 'shared/lib';
-import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import { Button, ButtonVariant } from 'shared/ui/Button';
-import css from './ThemeSwitcher.module.scss';
+import { Theme, useTheme } from 'shared/hooks/useTheme';
 import DarkIcon from '../assets/theme-dark.svg';
 import LightIcon from '../assets/theme-light.svg';
+import css from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
   className?: string;

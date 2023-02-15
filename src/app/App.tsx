@@ -1,28 +1,26 @@
-import { AboutPage } from 'pages/AboutPage';
-import { MainPage } from 'pages/MainPage';
 import { Suspense } from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { useTheme } from 'shared/hooks/useTheme';
 import { cns } from 'shared/lib';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { Navbar } from 'widgets/Navbar';
+import { PageLoader } from 'widgets/PageLoader';
 import { Sidebar } from 'widgets/Sidebar';
-import { Button, ButtonVariant } from 'shared/ui/Button';
 import { AppRouter } from './providers/Router/ui';
-import css from './App.module.scss';
 
 export function App() {
   const { theme } = useTheme();
   return (
-    <BrowserRouter>
-      <Suspense fallback="Loading">
-        <div className={cns('app', {}, [theme])}>
+    <Suspense fallback={<PageLoader />}>
+      <div className={cns('app', {}, [theme])}>
+        <ErrorBoundary>
           <Navbar />
           <div className="page-wrapper">
             <Sidebar />
             <AppRouter />
           </div>
-        </div>
-      </Suspense>
-    </BrowserRouter>
+        </ErrorBoundary>
+      </div>
+    </Suspense>
   );
 }

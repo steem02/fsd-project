@@ -1,5 +1,6 @@
 import { AboutPageAsync } from 'pages/AboutPage/ui/AboutPage.async';
 import { MainPageAsync } from 'pages/MainPage/ui/MainPage.async';
+import { NotFoundPage } from 'pages/NotFoundPage';
 import { RouteProps } from 'react-router-dom';
 
 export type IRouteConfig = RouteProps & {
@@ -17,5 +18,11 @@ export const routerConfig: IRouteConfig[] = [
     title: 'About',
     path: '/about',
     element: <AboutPageAsync />,
+  },
+
+  {
+    title: 'Not Found',
+    path: '*',
+    element: <NotFoundPage />,
   },
 ];

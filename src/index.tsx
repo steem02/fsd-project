@@ -1,16 +1,19 @@
-import React, { StrictMode, Suspense } from 'react';
+import { StrictMode } from 'react';
 import { render } from 'react-dom';
-import 'app/styles/index.scss';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
 import { App } from 'app/App';
+import 'app/styles/index.scss';
 
 import 'shared/config/i18n/i18n';
+import { ThemeProvider } from 'app/providers/ThemeProvider/ThemeProvider';
+import { BrowserRouter } from 'react-router-dom';
 
 render(
-  <ThemeProvider>
+  <BrowserRouter>
     <StrictMode>
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </StrictMode>
-  </ThemeProvider>,
+  </BrowserRouter>,
   document.getElementById('root')
 );

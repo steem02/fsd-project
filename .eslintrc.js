@@ -2,14 +2,15 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
   extends: ['plugin:@typescript-eslint/recommended', 'airbnb', 'airbnb-typescript', 'plugin:prettier/recommended'],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    tsConfigRootDir: __dirname,
-    project: './tsconfig.json',
     sourceType: 'module',
+    tsConfigRootDir: __dirname,
+    project: ['./tsconfig.json'],
     ecmaVersion: 'latest',
     ecmaFeatures: {
       jsx: true,
@@ -38,13 +39,14 @@ module.exports = {
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'warn',
     'no-underscore-dangle': 'off',
+    'no-restricted-globals': 'off',
   },
   settings: {
     react: {
       version: 'detect',
     },
   },
-  ignorePatterns: ['node_modules', './build', 'dist', 'public'],
+  ignorePatterns: ['node_modules', './build', 'dist', 'public', '.eslintrc.js'],
   globals: {
     __DEV__: true,
   },

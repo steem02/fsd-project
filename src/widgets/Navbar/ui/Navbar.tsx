@@ -1,8 +1,5 @@
-import { useTheme } from 'app/providers/ThemeProvider';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button } from 'shared/ui/Button';
+import { AppLink } from 'shared/ui/AppLink';
 import css from './Navbar.module.scss';
 
 export function Navbar() {

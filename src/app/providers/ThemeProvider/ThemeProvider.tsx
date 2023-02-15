@@ -1,16 +1,6 @@
-import React, { PropsWithChildren, useMemo, useState } from 'react';
-
-export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
-
-interface ThemeContextProps {
-  theme: Theme;
-  toggleTheme(): void;
-}
-
-export const ThemeContext = React.createContext<ThemeContextProps | null>(null);
+import { PropsWithChildren, useMemo, useState } from 'react';
+import { Theme, ThemeContext } from 'shared/hooks/useTheme';
+import { Button } from 'shared/ui/Button';
 
 const LOCAL_STORAGE_THEME_KEY = 'theme';
 
@@ -20,7 +10,7 @@ const getTheme = (theme: string | null): Theme =>
 const storageTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme | null;
 const defaultTheme: Theme = getTheme(storageTheme);
 
-function ThemeProvider({ children }: PropsWithChildren<unknown>) {
+export function ThemeProvider({ children }: PropsWithChildren<unknown>) {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   const toggleTheme = () => {
@@ -39,5 +29,3 @@ function ThemeProvider({ children }: PropsWithChildren<unknown>) {
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
-
-export default ThemeProvider;

@@ -5,5 +5,5 @@
     "selector-class-pattern": null,
     "string-quotes": "single"
   },
-  "ignoreFiles": ["**/*.tsx"]
+  "ignoreFiles": ["**/*.{tsx?, jsx?}"]
 }

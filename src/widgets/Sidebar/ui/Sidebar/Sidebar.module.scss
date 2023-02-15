@@ -1,6 +1,7 @@
 .root {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   width: var(--sidebar-width);
   padding: 1rem;
   color: var(--primary-color);
