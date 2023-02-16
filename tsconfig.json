@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "types": ["node", "jest"],
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
@@ -16,11 +15,11 @@
       "*": ["./src/*"]
     }
   },
-  "ignorePatterns": ["node_modules", "dist", ".eslintrc.js", "./config/**/*"],
+  "ignorePatterns": ["node_modules", "dist", "./config/**/*"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
-  // "include": ["./jest-setup.ts", "src/**/*", "config/**/*"]
+  },
+  "include": ["src/**/*", "config/**/*", ".eslintrc.js", "./webpack.config.ts"]
 }

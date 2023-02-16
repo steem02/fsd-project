@@ -1,5 +1,5 @@
 import { PropsWithChildren } from 'react';
-import { cns } from 'shared/lib';
+import cns from 'shared/lib/classnames/cns';
 import { Loader } from 'shared/ui/Loader';
 import { Button } from 'shared/ui/Button';
 import css from './PageLoader.module.scss';

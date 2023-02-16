@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
 import { Button } from 'shared/ui/Button';
 import { useTranslation } from 'react-i18next';
-import { cns } from 'shared/lib';
+import cns from 'shared/lib/classnames/cns';
 
 interface LangSwitcherProps {
   className?: string;

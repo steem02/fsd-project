@@ -1,5 +1,5 @@
 import { HTMLAttributes, PropsWithChildren } from 'react';
-import { cns } from 'shared/lib';
+import cns from 'shared/lib/classnames/cns';
 import css from './Button.module.scss';
 
 export enum ButtonVariant {
@@ -15,7 +15,7 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
 export function Button(props: PropsWithChildren<ButtonProps>) {
   const { className, children, theme = ButtonVariant.CONTAINED, ...rest } = props;
   return (
-    <button type="button" className={cns(css.root, { className }, [css.outlined])} {...rest}>
+    <button data-testid="test-button" type="button" className={cns(css.root, { className }, [css.outlined])} {...rest}>
       {children}
     </button>
   );

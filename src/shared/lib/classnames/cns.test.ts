@@ -1,4 +1,4 @@
-import { cns } from 'shared/lib';
+import cns from 'shared/lib/classnames/cns';
 
 describe('classnames', () => {
   it('with only first param', () => {

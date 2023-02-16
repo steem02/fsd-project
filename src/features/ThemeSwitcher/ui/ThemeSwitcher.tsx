@@ -1,7 +1,7 @@
 import { PropsWithChildren } from 'react';
-import { cns } from 'shared/lib';
 import { Button, ButtonVariant } from 'shared/ui/Button';
 import { Theme, useTheme } from 'shared/hooks/useTheme';
+import cns from 'shared/lib/classnames/cns';
 import DarkIcon from '../assets/theme-dark.svg';
 import LightIcon from '../assets/theme-light.svg';
 import css from './ThemeSwitcher.module.scss';

@@ -2,6 +2,7 @@
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
+import path from 'path';
 
 export default {
   // All imported modules in your tests should be mocked automatically
@@ -18,14 +19,12 @@ export default {
   testEnvironment: 'jsdom',
   coveragePathIgnorePatterns: ['/node_modules/'],
   moduleFileExtensions: ['js', 'mjs', 'cjs', 'jsx', 'ts', 'tsx', 'json', 'node'],
-  // rootDir: '../../',
-  moduleDirectories: ['node_modules', '<src'],
+  rootDir: '../../',
+  moduleDirectories: ['node_modules', 'src'],
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-  // modulePaths: ['<rootDir>src'],
   moduleNameMapper: {
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': 'test-file-stub',
-    '\\.(css|less|sass|scss)$': '<rootDir>/config/jest/__mocks__/styleMock.js',
-    // '/src(.*)': '<rootDir>/src/$1',
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, '__mocks__', 'fileMock.tsx'),
   },
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
   // Indicates whether the coverage information should be collected while executing the test

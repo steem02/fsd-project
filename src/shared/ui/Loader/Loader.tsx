@@ -1,4 +1,4 @@
-import { cns } from 'shared/lib';
+import cns from 'shared/lib/classnames/cns';
 import css from './Loader.module.scss';
 
 interface LoaderProps {

@@ -1,8 +1,7 @@
 import { Suspense } from 'react';
-import { BrowserRouter } from 'react-router-dom';
 import { useTheme } from 'shared/hooks/useTheme';
-import { cns } from 'shared/lib';
-import { ErrorBoundary } from 'app/providers/ErrorBoundary';
+
+import cns from 'shared/lib/classnames/cns';
 import { Navbar } from 'widgets/Navbar';
 import { PageLoader } from 'widgets/PageLoader';
 import { Sidebar } from 'widgets/Sidebar';
@@ -13,13 +12,11 @@ export function App() {
   return (
     <Suspense fallback={<PageLoader />}>
       <div className={cns('app', {}, [theme])}>
-        <ErrorBoundary>
-          <Navbar />
-          <div className="page-wrapper">
-            <Sidebar />
-            <AppRouter />
-          </div>
-        </ErrorBoundary>
+        <Navbar />
+        <div className="page-wrapper">
+          <Sidebar />
+          <AppRouter />
+        </div>
       </div>
     </Suspense>
   );

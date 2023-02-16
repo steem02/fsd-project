@@ -1,5 +1,5 @@
 import { Link, LinkProps } from 'react-router-dom';
-import { cns } from 'shared/lib';
+import cns from 'shared/lib/classnames/cns';
 import css from './AppLink.module.scss';
 
 export enum AppLinkTheme {
