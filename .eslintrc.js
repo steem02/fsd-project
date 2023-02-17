@@ -58,7 +58,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['node_modules', './build', 'dist', 'public', './config/**/*.js'],
+  ignorePatterns: ['node_modules', './build', 'dist', 'public', './config/**'],
   globals: {
     __DEV__: true,
   },

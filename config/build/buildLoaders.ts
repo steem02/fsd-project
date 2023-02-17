@@ -1,6 +1,7 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 import { buildStyleLoader } from './loaders/buildStyleLoader';
+import { buildSvgLoader } from './loaders/buildSvgLoader';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
   const fileLoader = {
@@ -17,19 +18,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     type: 'asset/resource',
   };
 
-  const svgLoader = [
-    {
-      test: /\.svg$/i,
-      type: 'asset',
-      resourceQuery: /url/, // *.svg?url
-    },
-    {
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      resourceQuery: { not: [/url/] }, // exclude react component if *.svg?url
-      use: ['@svgr/webpack'],
-    },
-  ];
+  const svgLoader = buildSvgLoader(isDev);
 
   const cssLoader = buildStyleLoader(isDev);
 

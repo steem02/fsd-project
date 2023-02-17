@@ -15,11 +15,11 @@
       "*": ["./src/*"]
     }
   },
-  "ignorePatterns": ["node_modules", "dist", "./config/**/*"],
+  "ignorePatterns": ["node_modules", "dist"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS"
     }
   },
-  "include": ["src/**/*", "config/**/*", ".eslintrc.js", "./webpack.config.ts"]
+  "include": ["src/**/*", "config/**/*", ".eslintrc.js", "webpack.config.ts"]
 }

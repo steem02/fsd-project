@@ -1,6 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Button } from './Button';
+import { ThemeDecorator } from 'app/config/storybook/ThemeDecorator/ThemeDecorator';
+import { Theme } from 'shared/hooks/useTheme';
+import { Button, ButtonVariant } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -8,10 +10,7 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
-    label: {
-      control: { type: 'color', presetColors: ['red', 'green'] },
-    },
+    theme: { control: 'radio' },
   },
 } as ComponentMeta<typeof Button>;
 
@@ -21,21 +20,14 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  // primary: true,
-  // label: 'Button',
+  children: 'Text',
+  theme: ButtonVariant.OUTLINED,
 };
+
+Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Secondary = Template.bind({});
-Secondary.args = {};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+Secondary.args = {
+  children: 'Text',
+  theme: ButtonVariant.CONTAINED,
 };
