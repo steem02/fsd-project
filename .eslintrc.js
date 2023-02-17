@@ -4,7 +4,13 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: ['plugin:@typescript-eslint/recommended', 'airbnb', 'airbnb-typescript', 'plugin:prettier/recommended'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'airbnb',
+    'airbnb-typescript',
+    'plugin:prettier/recommended',
+    'plugin:storybook/recommended',
+  ],
   overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -35,11 +41,17 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-shadow': 'off',
     '@typescript-eslint/no-shadow': ['error'],
-    'react/jsx-filename-extension': [2, { extensions: ['.tsx', '.jsx'] }],
+    'react/jsx-filename-extension': [
+      2,
+      {
+        extensions: ['.tsx', '.jsx'],
+      },
+    ],
     'react/require-default-props': 'off',
     'react/jsx-props-no-spreading': 'warn',
     'no-underscore-dangle': 'off',
     'no-restricted-globals': 'off',
+    'react/function-component-definition': 'off',
   },
   settings: {
     react: {
