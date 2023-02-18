@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '17.x'
-      - run: npm i
+        run: npm i
       - name: build
         run: npm run build:prod
   Lint:
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '17.x'
-      - run: npm ci
+        run: npm ci
       - name: run eslint
         run: npm run lint
       - name: run stylelint
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '17.x'
-      - run: npm ci
+        run: npm ci
       - run: npm run test:unit
   UI:
     runs-on: ubuntu-latest
@@ -44,5 +44,5 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '17.x'
-      - run: npm ci
+        run: npm ci
       - run: npm run test:ui:ci
