@@ -1,25 +1,48 @@
-name: linting, testing, building
+name: GitHub Actions Tests Group
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on:
   push:
     branches: [master]
   pull_request:
     branches: [master]
 jobs:
-  pipeline:
+  Build-Production:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [17.x]
-
     steps:
-      - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: install modules
-        run: npm install
-      - name: build production project
+          node-version: '17.x'
+      - run: npm ci
+      - name: build
         run: npm run build:prod
-      - name: linting typescript
-        run: npm run lint:ts
+  Lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '17.x'
+      - run: npm ci
+      - name: run eslint
+        run: npm run lint
+      - name: run stylelint
+        run: npm run lint:scss
+  Unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '17.x'
+      - run: npm ci
+      - run: npm run test:unit
+  UI:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '17.x'
+      - run: npm ci
+      - run: npm run test:ui:ci
