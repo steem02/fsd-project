@@ -18,8 +18,6 @@ Primary.args = {
   children: 'Text',
 };
 
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const Secondary = Template.bind({});
 Secondary.args = {
   children: 'Text',

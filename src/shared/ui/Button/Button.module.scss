@@ -1,8 +1,9 @@
 .root {
-  padding: 1rem;
+  display: block;
+  min-width: 4rem;
+  padding: 0.5rem;
   font-family: var(--font-family-main);
   cursor: pointer;
-  background-color: var(--bg-color);
   border-radius: 1rem;
 }
 
@@ -16,4 +17,43 @@
   color: var(--inverted-primary-color);
   background-color: var(--inverted-bg-color);
   border: none;
+}
+
+.cleared {
+  color: var(--primary-color);
+  text-decoration: underline;
+  background-color: var(--bg-color);
+  border: none;
+}
+
+.small {
+  font: var(--font-m);
+}
+
+.medium {
+  font: var(--font-l);
+}
+
+.large {
+  font: var(--font-xl);
+}
+
+.square {
+  padding: 0;
+  border-radius: 0;
+}
+
+.square.small {
+  min-width: var(--font-line-m);
+  height: var(--font-line-m);
+}
+
+.square.medium {
+  min-width: var(--font-line-l);
+  height: var(--font-line-l);
+}
+
+.square.large {
+  min-width: var(--font-line-xl);
+  height: var(--font-line-xl);
 }

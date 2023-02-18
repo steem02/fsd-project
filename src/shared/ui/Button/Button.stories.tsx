@@ -1,33 +1,48 @@
-import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'app/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'shared/hooks/useTheme';
+import { Size } from 'shared/types/types';
 import { Button, ButtonVariant } from './Button';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'shared/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    theme: { control: 'radio' },
+    variant: { control: 'radio' },
+  },
+  args: {
+    size: Size.M,
   },
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  children: 'Text',
-  theme: ButtonVariant.OUTLINED,
+export const Outlined = Template.bind({});
+Outlined.args = {
+  children: 'Button',
+  variant: ButtonVariant.OUTLINED,
 };
 
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
+export const Contained = Template.bind({});
+Contained.args = {
+  children: 'Button',
+  variant: ButtonVariant.CONTAINED,
+};
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: 'Text',
-  theme: ButtonVariant.CONTAINED,
+export const Cleared = Template.bind({});
+Cleared.args = {
+  children: 'Button',
+  variant: ButtonVariant.CLEARED,
+};
+
+export const SquareContained = Template.bind({});
+SquareContained.args = {
+  children: '>',
+  variant: ButtonVariant.CONTAINED,
+  square: true,
+};
+
+export const SquareOutlined = Template.bind({});
+SquareOutlined.args = {
+  children: '<',
+  variant: ButtonVariant.OUTLINED,
+  square: true,
 };

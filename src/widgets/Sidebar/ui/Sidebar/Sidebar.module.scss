@@ -1,12 +1,12 @@
 .root {
+  position: relative;
   display: flex;
   flex-direction: column;
-  flex-shrink: 0;
   width: var(--sidebar-width);
   padding: 1rem;
   color: var(--primary-color);
   background-color: var(--secondary-bg-color);
-  transition: width 0.3s;
+  transition: width 0.5s;
 }
 
 .collapsed {
@@ -16,7 +16,22 @@
 }
 
 .links {
+  display: flex;
+  flex-direction: column;
   flex-grow: 1;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.icon {
+  width: var(--font-size-l);
+  height: var(--font-size-l);
+  margin-right: 1rem;
+  fill: var(--primary-color);
 }
 
 .actions {

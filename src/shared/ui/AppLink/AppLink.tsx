@@ -1,19 +1,27 @@
-import { Link, LinkProps } from 'react-router-dom';
+import { NavLinkProps, NavLink } from 'react-router-dom';
 import cns from 'shared/lib/classnames/cns';
+import { Size } from 'shared/types/types';
 import css from './AppLink.module.scss';
 
-export enum AppLinkTheme {
+export enum AppLinkVariant {
   PRIMARY = 'primary',
   SECONDARY = 'secondary',
-  GOLD = 'gold',
 }
 
-type AppLinkProps = LinkProps & {
+type AppLinkProps = NavLinkProps & {
   className?: string;
-  theme?: AppLinkTheme;
+  variant?: AppLinkVariant;
+  size?: Size;
+  underline?: boolean;
 };
 
 export function AppLink(props: AppLinkProps) {
-  const { theme = AppLinkTheme.PRIMARY } = props;
-  return <Link className={cns(css.root, {}, [css[theme]])} {...props} />;
+  const { underline, size = Size.M, variant = AppLinkVariant.PRIMARY, className, ...rest } = props;
+  const classNames = [css[size], css[variant], className];
+  return (
+    <NavLink
+      className={({ isActive }) => cns(css.root, { [css.active]: isActive, [css.underline]: underline }, classNames)}
+      {...rest}
+    />
+  );
 }

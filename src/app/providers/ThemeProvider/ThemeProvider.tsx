@@ -1,6 +1,5 @@
 import { PropsWithChildren, useMemo, useState } from 'react';
 import { Theme, ThemeContext } from 'shared/hooks/useTheme';
-import { Button } from 'shared/ui/Button';
 
 const LOCAL_STORAGE_THEME_KEY = 'theme';
 

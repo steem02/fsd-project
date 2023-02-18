@@ -9,13 +9,6 @@ export default {
   argTypes: {
     theme: { control: 'radio' },
   },
-  decorators: [
-    (Story) => (
-      <div className="page-wrapper">
-        <Story />
-      </div>
-    ),
-  ],
 } as ComponentMeta<typeof NotFoundPage>;
 
 const Template: ComponentStory<typeof NotFoundPage> = () => <NotFoundPage />;
@@ -24,8 +17,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Text',
 };
-
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Secondary = Template.bind({});
 Secondary.args = {

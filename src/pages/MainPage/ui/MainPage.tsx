@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Button, ButtonVariant } from 'shared/ui/Button';
+import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 
 export default function MainPage() {
   const [error, setError] = useState(false);
@@ -12,8 +12,9 @@ export default function MainPage() {
 
   return (
     <div>
-      MainPage{' '}
-      <Button theme={ButtonVariant.OUTLINED} onClick={() => setError(true)}>
+      MainPage
+      <br />
+      <Button variant={ButtonVariant.OUTLINED} onClick={() => setError(true)}>
         Error
       </Button>
     </div>

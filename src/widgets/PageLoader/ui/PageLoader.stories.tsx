@@ -12,13 +12,6 @@ export default {
   args: {
     to: '/',
   },
-  decorators: [
-    (Story) => (
-      <div className="page-wrapper">
-        <Story />
-      </div>
-    ),
-  ],
 } as ComponentMeta<typeof PageLoader>;
 
 const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...args} />;
@@ -27,8 +20,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Text',
 };
-
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Secondary = Template.bind({});
 Secondary.args = {

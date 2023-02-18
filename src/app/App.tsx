@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import { useTheme } from 'shared/hooks/useTheme';
-
 import cns from 'shared/lib/classnames/cns';
 import { Navbar } from 'widgets/Navbar';
 import { PageLoader } from 'widgets/PageLoader';
@@ -11,10 +10,10 @@ export function App() {
   const { theme } = useTheme();
   return (
     <Suspense fallback={<PageLoader />}>
-      <div className={cns('app light', {}, [theme])}>
+      <div className={cns('app', {}, [theme])}>
         <Navbar />
         <div className="page-wrapper">
-          <Sidebar />
+          <Sidebar className="page-sidebar" />
           <AppRouter />
         </div>
       </div>

@@ -1,6 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'app/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'shared/hooks/useTheme';
 import { Sidebar } from './Sidebar';
 
 export default {
@@ -24,8 +22,6 @@ export const Primary = Template.bind({});
 Primary.args = {
   children: 'Text',
 };
-
-Primary.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const Secondary = Template.bind({});
 Secondary.args = {

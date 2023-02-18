@@ -1,7 +1,6 @@
 import { PropsWithChildren } from 'react';
 import cns from 'shared/lib/classnames/cns';
-import { Loader } from 'shared/ui/Loader';
-import { Button } from 'shared/ui/Button';
+import { Loader } from 'shared/ui/Loader/Loader';
 import css from './PageLoader.module.scss';
 
 interface PageLoaderProps {
