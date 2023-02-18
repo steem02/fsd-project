@@ -10,7 +10,7 @@ describe('classnames', () => {
   });
 
   it('with mods, withot first param', () => {
-    expect(cns('class', { hovered: false, navbar: true }, ['name'])).toBe('class navbar name');
+    expect(cns('class', { hovered: false, navbar: true }, ['name'])).toBe('class name navbar');
   });
 
   it('with mod undefined', () => {
