@@ -68,7 +68,7 @@ OutlinedDark.parameters = {
   theme: Theme.DARK,
 };
 OutlinedDark.args = {
-  children: 'Button',
+  children: 'Test',
   variant: ButtonVariant.OUTLINED,
 };
 
