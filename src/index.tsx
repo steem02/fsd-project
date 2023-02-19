@@ -6,15 +6,12 @@ import 'app/styles/index.scss';
 import 'shared/config/i18n/i18n';
 import { ThemeProvider } from 'app/providers/ThemeProvider/ThemeProvider';
 import { BrowserRouter } from 'react-router-dom';
-import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 
 render(
   <BrowserRouter>
     <StrictMode>
       <ThemeProvider>
-        <ErrorBoundary>
-          <App />
-        </ErrorBoundary>
+        <App />
       </ThemeProvider>
     </StrictMode>
   </BrowserRouter>,

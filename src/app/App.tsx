@@ -4,6 +4,7 @@ import cns from 'shared/lib/classnames/cns';
 import { Navbar } from 'widgets/Navbar';
 import { PageLoader } from 'widgets/PageLoader';
 import { Sidebar } from 'widgets/Sidebar';
+import { ErrorBoundary } from './providers/ErrorBoundary';
 import { AppRouter } from './providers/Router/ui';
 
 export function App() {
@@ -11,11 +12,13 @@ export function App() {
   return (
     <Suspense fallback={<PageLoader />}>
       <div className={cns('app', {}, [theme])}>
-        <Navbar />
-        <div className="page-wrapper">
-          <Sidebar className="page-sidebar" />
-          <AppRouter />
-        </div>
+        <ErrorBoundary>
+          <Navbar />
+          <div className="page-wrapper">
+            <Sidebar className="page-sidebar" />
+            <AppRouter />
+          </div>
+        </ErrorBoundary>
       </div>
     </Suspense>
   );

@@ -13,12 +13,18 @@ export default {
 
 const Template: ComponentStory<typeof Navbar> = () => <Navbar />;
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Light = Template.bind({});
+Light.parameters = {
+  theme: Theme.LIGHT,
+};
+Light.args = {
   children: 'Text',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
+export const Dark = Template.bind({});
+Dark.parameters = {
+  theme: Theme.DARK,
+};
+Dark.args = {
   children: 'Text',
 };

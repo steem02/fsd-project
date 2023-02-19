@@ -1,5 +1,4 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from 'app/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'shared/hooks/useTheme';
 import { PageLoader } from './PageLoader';
 
@@ -9,19 +8,15 @@ export default {
   argTypes: {
     theme: { control: 'radio' },
   },
-  args: {
-    to: '/',
-  },
 } as ComponentMeta<typeof PageLoader>;
 
 const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  children: 'Text',
+export const Light = Template.bind({});
+Light.parameters = {
+  theme: Theme.LIGHT,
 };
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  children: 'Text',
+export const Dark = Template.bind({});
+Dark.parameters = {
+  theme: Theme.DARK,
 };

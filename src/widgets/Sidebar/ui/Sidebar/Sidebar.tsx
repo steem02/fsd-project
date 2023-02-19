@@ -13,12 +13,13 @@ import css from './Sidebar.module.scss';
 
 interface SideBarProps {
   className?: string;
+  defaultCollapsed?: boolean;
 }
 
 export function Sidebar(props: PropsWithChildren<SideBarProps>) {
-  const { className } = props;
+  const { className, defaultCollapsed } = props;
   const { t } = useTranslation();
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(defaultCollapsed ?? false);
 
   const toggleSidebar = async () => {
     setCollapsed((prev) => !prev);
@@ -31,7 +32,7 @@ export function Sidebar(props: PropsWithChildren<SideBarProps>) {
           <MainIcon className={css.icon} />
           {!collapsed && <span>{t('main')}</span>}
         </AppLink>
-
+        sfsdfsfsfsd
         <AppLink to={RouterPath.ABOUT} className={css.link}>
           <AboutIcon className={css.icon} />
           {!collapsed && <span>{t('about')}</span>}
