@@ -45,4 +45,6 @@ jobs:
         with:
           node-version: '17.x'
       - run: npm ci
+      - name: build storybook
+        run: npm run sb:build
       - run: npm run test:ui:ci

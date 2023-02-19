@@ -32,7 +32,6 @@ export function Sidebar(props: PropsWithChildren<SideBarProps>) {
           <MainIcon className={css.icon} />
           {!collapsed && <span>{t('main')}</span>}
         </AppLink>
-        sfsdfsfsfsd
         <AppLink to={RouterPath.ABOUT} className={css.link}>
           <AboutIcon className={css.icon} />
           {!collapsed && <span>{t('about')}</span>}
