@@ -11,7 +11,6 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:storybook/recommended',
   ],
-  overrides: [],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     sourceType: 'module',
@@ -22,7 +21,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', 'react-hooks', 'prettier', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', 'prettier', '@typescript-eslint', 'i18next'],
   rules: {
     indent: [2, 2],
     '@typescript-eslint/consistent-type-imports': 'off',
@@ -52,6 +51,13 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'no-restricted-globals': 'off',
     'react/function-component-definition': 'off',
+    'i18next/no-literal-string': [
+      'error',
+      {
+        markupOnly: true,
+        ignoreAttribute: ['data-testid', 'to'],
+      },
+    ],
   },
   settings: {
     react: {
@@ -62,4 +68,12 @@ module.exports = {
   globals: {
     __DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}', '**/src/**/*.stories.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };

@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 
 export default function MainPage() {
   const [error, setError] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (error) {
@@ -12,10 +14,10 @@ export default function MainPage() {
 
   return (
     <div>
-      MainPage
+      {t('mock_article')}
       <br />
       <Button variant={ButtonVariant.OUTLINED} onClick={() => setError(true)}>
-        Error
+        {t('error')}
       </Button>
     </div>
   );
