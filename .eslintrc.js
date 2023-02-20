@@ -58,6 +58,8 @@ module.exports = {
         ignoreAttribute: ['data-testid', 'to'],
       },
     ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error',
   },
   settings: {
     react: {
