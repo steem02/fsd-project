@@ -1,4 +1,4 @@
-.app {
+:root {
   --font-family-main: 'Comic Sans MS', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
   --font-size-m: 16px;
   --font-line-m: 24px;
@@ -12,4 +12,5 @@
   --navbar-height: 100px;
   --sidebar-width: 350px;
   --sidebar-collapsed-width: 100px;
+  --bg-color-overlay: rgb(0 0 0 / 60%);
 }

@@ -3,7 +3,8 @@
   "plugins": ["stylelint-order"],
   "rules": {
     "selector-class-pattern": null,
-    "string-quotes": "single"
+    "string-quotes": "single",
+    "max-empty-lines": 2
   },
   "ignoreFiles": ["**/*.{tsx?, jsx?}"]
 }
