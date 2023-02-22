@@ -12,15 +12,28 @@ export function Modal({ isOpen, onClose }: ModalProps) {
   const { t } = useTranslation();
   const [open, setOpen] = useState(isOpen);
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const onKeyDown = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      handleClose();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  });
+
   useEffect(() => {
     if (isOpen) {
       setOpen(isOpen);
     }
   }, [isOpen]);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
 
   const onAnimationEnd = (e: AnimationEvent<HTMLDivElement>) => {
     if (e.animationName === css.closeOverlay) {

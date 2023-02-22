@@ -6,24 +6,24 @@ import { Portal } from 'shared/ui/Portal/Portal';
 import css from './Navbar.module.scss';
 
 export function Navbar() {
-  const [open, setOpen] = useState(false);
+  const [isAuthModal, setisAuthModal] = useState(false);
   const { t } = useTranslation();
 
-  const openModal = useCallback(() => {
-    setOpen((item) => !item);
+  const isAuthModalModal = useCallback(() => {
+    setisAuthModal((item) => !item);
   }, []);
 
   const closeModal = useCallback(() => {
-    setOpen(false);
+    setisAuthModal(false);
   }, []);
 
   return (
     <div className={css.root}>
       <div />
       <div>
-        <Button onClick={openModal}>{t('open')}</Button>
+        <Button onClick={isAuthModalModal}>{t('login')}</Button>
         <Portal>
-          <Modal isOpen={open} onClose={closeModal} />
+          <Modal isOpen={isAuthModal} onClose={closeModal} />
         </Portal>
       </div>
     </div>

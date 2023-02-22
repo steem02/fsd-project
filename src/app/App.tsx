@@ -11,7 +11,7 @@ export function App() {
   const { theme } = useTheme();
   return (
     <Suspense fallback={<PageLoader />}>
-      <div className={cns('app', {}, [theme])}>
+      <div className={cns('app', {}, ['theme', theme])}>
         <ErrorBoundary>
           <Navbar />
           <div className="page-wrapper">

@@ -10,6 +10,6 @@ interface PortalProps {
 
 export function Portal({ children, node = document.body }: PortalProps) {
   const { theme } = useTheme();
-  const content = <div className={cns('app', {}, ['theme', theme])}>{children}</div>;
+  const content = <div className={cns('theme', {}, [theme])}>{children}</div>;
   return createPortal(content, node);
 }
