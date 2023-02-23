@@ -31,6 +31,7 @@ export default {
     '\\.svg': path.resolve(__dirname, '__mocks__', 'fileMock.tsx'),
   },
   setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+  transformIgnorePatterns: ['node_modules/(?!axios)'],
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
 
