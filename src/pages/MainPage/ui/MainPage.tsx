@@ -1,3 +1,4 @@
+import { Counter } from 'entities/Counter';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
@@ -19,6 +20,8 @@ export default function MainPage() {
       <Button variant={ButtonVariant.OUTLINED} onClick={() => setError(true)}>
         {t('error')}
       </Button>
+
+      <Counter />
     </div>
   );
 }
