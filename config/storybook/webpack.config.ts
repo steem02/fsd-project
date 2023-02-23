@@ -15,7 +15,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
 
   config.resolve?.modules?.push(paths.src);
   config.resolve?.extensions?.push('ts', 'tsx');
-
+  config.plugins?.push(
+    new webpack.DefinePlugin({
+      __DEV__: true,
+    })
+  );
   if (config.module?.rules) {
     // eslint-disable-next-line no-param-reassign
     config.module.rules = config.module?.rules.map((rule) => {

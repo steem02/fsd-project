@@ -5,13 +5,12 @@ import { Navbar } from 'widgets/Navbar';
 import { PageLoader } from 'widgets/PageLoader';
 import { Sidebar } from 'widgets/Sidebar';
 import { ErrorBoundary } from './providers/ErrorBoundary';
-import { AppRouter } from './providers/Router/ui';
+import { AppRouter } from './providers/Router';
 
 export function App() {
-  const { theme } = useTheme();
   return (
     <Suspense fallback={<PageLoader />}>
-      <div className={cns('app', {}, ['theme', theme])}>
+      <div className={cns('app', {})}>
         <ErrorBoundary>
           <Navbar />
           <div className="page-wrapper">

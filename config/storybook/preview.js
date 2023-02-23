@@ -2,6 +2,7 @@ import { addDecorator } from '@storybook/react';
 import { StyleDecorator } from '../../src/app/config/storybook/StyleDecorator/StyleDecorator';
 import { ThemeDecorator } from '../../src/app/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouteDecorator } from '../../src/app/config/storybook/RouteDecorator/RouteDecorator';
+import { StoreDecorator } from '../../src/app/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '../../src/shared/hooks/useTheme';
 import i18n from '../../src/shared/config/i18n/i18nStorybook';
 
@@ -36,6 +37,7 @@ export const parameters = {
   },
 };
 
+addDecorator(StoreDecorator);
 addDecorator(RouteDecorator);
 addDecorator(StyleDecorator);
 addDecorator(ThemeDecorator);
