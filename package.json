@@ -21,7 +21,8 @@
     "test:ui:ok": "loki approve -c \"./config/storybook\"",
     "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
     "test:ui:json": "node scripts/generate-visual-json-report.js .loki/report.json",
-    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html"
+    "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "server": "node ./json-server/index.js"
   },
   "author": "",
   "license": "ISC",
@@ -91,6 +92,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.5.1",
     "jest-environment-jsdom": "^27.5.1",
+    "json-server": "^0.17.2",
     "lint-staged": "^13.1.1",
     "loki": "^0.31.0",
     "mini-css-extract-plugin": "^2.5.3",

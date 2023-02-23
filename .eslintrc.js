@@ -21,7 +21,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ['react', 'react-hooks', 'prettier', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'react-hooks', 'prettier', 'i18next'],
   rules: {
     indent: [2, 2],
     '@typescript-eslint/consistent-type-imports': 'off',
@@ -69,7 +69,7 @@ module.exports = {
       version: 'detect',
     },
   },
-  ignorePatterns: ['node_modules', './build', 'dist', 'public', './config/**', 'scripts/**'],
+  ignorePatterns: ['node_modules', './build', 'dist', 'public', './config/**', 'scripts/**', 'json-server'],
   globals: {
     __DEV__: true,
   },
