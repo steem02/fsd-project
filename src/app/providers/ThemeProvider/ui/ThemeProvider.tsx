@@ -8,6 +8,7 @@ const getTheme = (theme: string | null): Theme =>
 
 const storageTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme | null;
 const defaultTheme: Theme = getTheme(storageTheme);
+document.body.className = defaultTheme;
 
 interface ThemeProviderProps {
   children: ReactNode;

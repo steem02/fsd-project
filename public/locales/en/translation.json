@@ -11,5 +11,6 @@
   "open": "Open",
   "login": "Login",
   "increment": "Increment",
-  "decrement": "Decrement"
+  "decrement": "Decrement",
+  "submit": "Submit"
 }

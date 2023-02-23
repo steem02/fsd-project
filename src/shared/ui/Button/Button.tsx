@@ -1,4 +1,4 @@
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
 import cns from 'shared/lib/classnames/cns';
 import { Size } from 'shared/types/types';
 import css from './Button.module.scss';
@@ -9,7 +9,7 @@ export enum ButtonVariant {
   CLEARED = 'cleared',
 }
 
-type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   size?: Size;
   square?: boolean;
   className?: string;
@@ -17,12 +17,21 @@ type ButtonProps = HTMLAttributes<HTMLButtonElement> & {
 };
 
 export function Button(props: PropsWithChildren<ButtonProps>) {
-  const { className, size = Size.M, square, children, variant = ButtonVariant.CONTAINED, ...rest } = props;
+  const {
+    className,
+    size = Size.M,
+    square,
+    children,
+    variant = ButtonVariant.CONTAINED,
+    type = 'button',
+    ...rest
+  } = props;
+
   const classNames = [className, css[size], css[variant]];
   return (
     <button
       data-testid="test-button"
-      type="button"
+      type={type}
       className={cns(css.root, { [css.square]: square }, classNames)}
       {...rest}
     >

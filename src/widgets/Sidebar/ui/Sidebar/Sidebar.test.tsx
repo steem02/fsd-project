@@ -1,9 +1,8 @@
 import { fireEvent, screen } from '@testing-library/react';
 import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
-import { renderWithTranslations } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 import { Sidebar } from 'widgets/Sidebar';
 
-describe('Button test', () => {
+describe('Sidebar test', () => {
   test('render Sidebar', () => {
     componentRender(<Sidebar />, { route: '/' });
     expect(screen.getByTestId('test-sidebar')).toBeInTheDocument();

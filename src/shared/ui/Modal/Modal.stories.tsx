@@ -17,7 +17,7 @@ export default {
   ],
 } as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal isOpen />;
+const Template: ComponentStory<typeof Modal> = (args) => <Modal isOpen>mock text</Modal>;
 
 export const Light = Template.bind({});
 Light.parameters = {

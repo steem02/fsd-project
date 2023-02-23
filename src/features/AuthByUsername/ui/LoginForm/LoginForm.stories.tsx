@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'shared/hooks/useTheme';
-import { Loader } from './Loader';
+import { LoginForm } from './LoginForm';
 
 export default {
-  title: 'shared/Loader',
-  component: Loader,
+  title: 'features/LoginForm',
+  component: LoginForm,
   argTypes: {
     theme: { control: 'radio' },
   },
@@ -15,16 +15,18 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Loader>;
+} as ComponentMeta<typeof LoginForm>;
 
-const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
+const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const Light = Template.bind({});
 Light.parameters = {
   theme: Theme.LIGHT,
 };
+Light.args = {};
 
 export const Dark = Template.bind({});
 Dark.parameters = {
   theme: Theme.DARK,
 };
+Dark.args = {};

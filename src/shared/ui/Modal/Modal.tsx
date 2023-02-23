@@ -1,33 +1,31 @@
 import { AnimationEvent, useCallback, useEffect, useMemo, useState } from 'react';
-import { useTranslation } from 'react-i18next';
 import cns from 'shared/lib/classnames/cns';
 import css from './Modal.module.scss';
 
-interface ModalProps {
+export interface ModalProps {
   isOpen: boolean;
   onClose?(): void;
+  children: React.ReactNode;
 }
 
-export function Modal({ isOpen, onClose }: ModalProps) {
-  const { t } = useTranslation();
+export function Modal({ isOpen, onClose, children }: ModalProps) {
   const [open, setOpen] = useState(isOpen);
 
   const handleClose = () => {
     setOpen(false);
   };
 
-  const onKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      handleClose();
-    }
-  };
-
   useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleClose();
+      }
+    };
     window.addEventListener('keydown', onKeyDown);
     return () => {
       window.removeEventListener('keydown', onKeyDown);
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
@@ -54,18 +52,9 @@ export function Modal({ isOpen, onClose }: ModalProps) {
   }
 
   return (
-    <div
-      className={cns('root', toggleClasses, [css.overlay])}
-      onClick={handleClose}
-      onAnimationEnd={onAnimationEnd}
-      onKeyDown={(e) => {
-        if (e.key === 'Escape') {
-          handleClose();
-        }
-      }}
-    >
+    <div className={cns('root', toggleClasses, [css.overlay])} onClick={handleClose} onAnimationEnd={onAnimationEnd}>
       <div className={cns(css.content, toggleClasses, [])} onClick={(e) => e.stopPropagation()}>
-        {t('mock_article')}
+        {children}
       </div>
     </div>
   );
