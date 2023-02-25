@@ -24,6 +24,7 @@ export function Button(props: PropsWithChildren<ButtonProps>) {
     children,
     variant = ButtonVariant.CONTAINED,
     type = 'button',
+    disabled,
     ...rest
   } = props;
 
@@ -32,7 +33,8 @@ export function Button(props: PropsWithChildren<ButtonProps>) {
     <button
       data-testid="test-button"
       type={type}
-      className={cns(css.root, { [css.square]: square }, classNames)}
+      disabled={disabled}
+      className={cns(css.root, { [css.square]: square, [css.disabled]: disabled }, classNames)}
       {...rest}
     >
       {children}

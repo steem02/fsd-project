@@ -1,5 +1,6 @@
-import { Suspense } from 'react';
-import { useTheme } from 'shared/hooks/useTheme';
+import { userActions } from 'entities/User';
+import { Suspense, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import cns from 'shared/lib/classnames/cns';
 import { Navbar } from 'widgets/Navbar';
 import { PageLoader } from 'widgets/PageLoader';
@@ -8,6 +9,12 @@ import { ErrorBoundary } from './providers/ErrorBoundary';
 import { AppRouter } from './providers/Router';
 
 export function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
+
   return (
     <Suspense fallback={<PageLoader />}>
       <div className={cns('app', {})}>

@@ -1,4 +1,4 @@
-import { AnimationEvent, useCallback, useEffect, useMemo, useState } from 'react';
+import { AnimationEvent, useEffect, useMemo, useState } from 'react';
 import cns from 'shared/lib/classnames/cns';
 import css from './Modal.module.scss';
 

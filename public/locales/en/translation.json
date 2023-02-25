@@ -12,5 +12,6 @@
   "login": "Login",
   "increment": "Increment",
   "decrement": "Decrement",
-  "submit": "Submit"
+  "submit": "Submit",
+  "logout": "Logout"
 }

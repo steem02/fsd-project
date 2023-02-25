@@ -57,3 +57,8 @@
   min-width: var(--font-line-xl);
   height: var(--font-line-xl);
 }
+
+.disabled {
+  color: var(--disabled-primary-color);
+  border: 1px solid var(--inverted-disabled-primary-color);
+}

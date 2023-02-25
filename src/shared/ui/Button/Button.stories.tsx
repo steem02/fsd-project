@@ -109,3 +109,23 @@ SquareOutlinedDark.args = {
   variant: ButtonVariant.OUTLINED,
   square: true,
 };
+
+export const DisabledLight = Template.bind({});
+DisabledLight.parameters = {
+  theme: Theme.LIGHT,
+};
+DisabledLight.args = {
+  children: 'Disabled',
+  variant: ButtonVariant.OUTLINED,
+  disabled: true,
+};
+
+export const DisabledDark = Template.bind({});
+DisabledDark.parameters = {
+  theme: Theme.DARK,
+};
+DisabledDark.args = {
+  children: 'Disabled',
+  variant: ButtonVariant.OUTLINED,
+  disabled: true,
+};
